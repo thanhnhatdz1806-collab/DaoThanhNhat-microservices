@@ -34,8 +34,8 @@ CREATE TABLE IF NOT EXISTS `customer_addresses` (
 -- Dữ liệu mẫu (Sample Data)
 -- ===================================================
 INSERT INTO `customers` (`name`, `email`, `phone`, `address`) VALUES
-('Đào Thành Nhật', 'thanhnhat@example.com', '0912345678', 'TP. Hồ Chí Minh'),
-('Trần Văn B', 'tranvanb@example.com', '0987654321', 'Hà Nội');
+('Đào Thành Nhật', 'thanhnhat@gmail.com', '0912345678', 'TP. Hồ Chí Minh'),
+('Trần Văn B', 'tranvanb@gmail.com', '0987654321', 'Hà Nội');
 
 INSERT INTO `customer_addresses` (`customer_id`, `recipient_name`, `phone`, `street_address`, `city`, `is_default`) VALUES
 (1, 'Đào Thành Nhật', '0912345678', '123 Đường Lê Lợi, Phường Bến Nghé, Quận 1', 'TP. Hồ Chí Minh', TRUE),

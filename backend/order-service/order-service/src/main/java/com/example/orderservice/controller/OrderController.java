@@ -1,5 +1,6 @@
 package com.example.orderservice.controller;
 
+import com.example.orderservice.dto.ProductResponse;
 import com.example.orderservice.entity.Order;
 import com.example.orderservice.service.OrderService;
 import jakarta.validation.Valid;
@@ -17,6 +18,11 @@ public class OrderController {
 
     public OrderController(OrderService service) {
         this.service = service;
+    }
+
+    @GetMapping("/product/{id}")
+    public ProductResponse getProduct(@PathVariable Long id) {
+        return service.getProduct(id);
     }
 
     @GetMapping

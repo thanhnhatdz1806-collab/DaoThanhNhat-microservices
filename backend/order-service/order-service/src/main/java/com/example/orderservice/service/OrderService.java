@@ -1,5 +1,7 @@
 package com.example.orderservice.service;
 
+import com.example.orderservice.client.ProductClient;
+import com.example.orderservice.dto.ProductResponse;
 import com.example.orderservice.entity.Order;
 import com.example.orderservice.repository.OrderRepository;
 import org.springframework.stereotype.Service;
@@ -11,9 +13,15 @@ import java.util.Optional;
 public class OrderService {
 
     private final OrderRepository orderRepository;
+    private final ProductClient productClient;
 
-    public OrderService(OrderRepository orderRepository) {
+    public OrderService(OrderRepository orderRepository, ProductClient productClient) {
         this.orderRepository = orderRepository;
+        this.productClient = productClient;
+    }
+
+    public ProductResponse getProduct(Long productId) {
+        return productClient.getById(productId);
     }
 
     public List<Order> getAll() {
