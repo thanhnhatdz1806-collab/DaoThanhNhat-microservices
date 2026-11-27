@@ -1,5 +1,7 @@
 package com.example.orderservice.controller;
 
+import com.example.orderservice.dto.OrderRequest;
+import com.example.orderservice.dto.OrderResponse;
 import com.example.orderservice.dto.ProductResponse;
 import com.example.orderservice.entity.Order;
 import com.example.orderservice.service.OrderService;
@@ -18,6 +20,13 @@ public class OrderController {
 
     public OrderController(OrderService service) {
         this.service = service;
+    }
+
+    @PostMapping
+    public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderRequest request) {
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(service.createOrder(request));
     }
 
     @GetMapping("/product/{id}")
@@ -40,12 +49,6 @@ public class OrderController {
     @GetMapping("/customer/{customerId}")
     public ResponseEntity<List<Order>> getByCustomerId(@PathVariable Long customerId) {
         return ResponseEntity.ok(service.getByCustomerId(customerId));
-    }
-
-    @PostMapping
-    public ResponseEntity<Order> create(@Valid @RequestBody Order order) {
-        Order createdOrder = service.create(order);
-        return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
