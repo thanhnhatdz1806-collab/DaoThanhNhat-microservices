@@ -1,4 +1,4 @@
-﻿package com.example.menuservice.repository;
+package com.example.menuservice.repository;
 
 import com.example.menuservice.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;

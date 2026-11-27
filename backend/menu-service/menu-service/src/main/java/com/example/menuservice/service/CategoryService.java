@@ -1,4 +1,4 @@
-﻿package com.example.menuservice.service;
+package com.example.menuservice.service;
 
 import com.example.menuservice.entity.Category;
 import com.example.menuservice.repository.CategoryRepository;

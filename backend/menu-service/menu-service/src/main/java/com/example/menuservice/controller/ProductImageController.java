@@ -1,4 +1,4 @@
-﻿package com.example.menuservice.controller;
+package com.example.menuservice.controller;
 
 import com.example.menuservice.entity.ProductImage;
 import com.example.menuservice.service.ProductImageService;

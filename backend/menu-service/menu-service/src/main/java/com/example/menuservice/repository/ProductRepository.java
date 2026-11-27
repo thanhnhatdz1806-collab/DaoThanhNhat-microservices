@@ -1,4 +1,4 @@
-﻿package com.example.menuservice.repository;
+package com.example.menuservice.repository;
 
 import com.example.menuservice.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;

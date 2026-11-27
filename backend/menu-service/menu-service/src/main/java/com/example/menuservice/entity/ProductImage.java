@@ -1,4 +1,4 @@
-﻿package com.example.menuservice.entity;
+package com.example.menuservice.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
